@@ -1,9 +1,7 @@
 <template>
     <div>
-        <span>
-            <slot></slot>
-        </span>
-        <span>props : {{ props.text }}</span>
+        <span>props : {{ props.text }}, slot: </span>
+        <slot></slot>
     </div>
 </template>
 

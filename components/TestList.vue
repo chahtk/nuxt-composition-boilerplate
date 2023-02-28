@@ -6,8 +6,8 @@
             <button @click="onClickMinusButton">-</button>
         </div>
         <div id="children">
-            <test-item :text="props1">child1</test-item>
-            <test-item>child2</test-item>
+            <TestItem :text="props1">test props</TestItem>
+            <TestItem>test default props value</TestItem>
         </div>
     </div>
 </template>
@@ -15,11 +15,12 @@
 <!-- <script setup> 장점 : https://mine-it-record.tistory.com/640 -->
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
+import TestItem from './TestItem.vue';
 
 const number = ref(1);
 
 // props
-const props1 = '123';
+const props1 = 'props text';
 
 const onClickPlusButton = () => {
     number.value++;
