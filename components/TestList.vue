@@ -1,9 +1,9 @@
 <template>
     <div>
         <div id="children">
-            <TestItem :text="props1">test props</TestItem>
-            <TestItem>test default props value</TestItem>
-            <test-indie></test-indie>
+            <composition-base></composition-base>
+            <composition-counter></composition-counter>
+            <no-composition></no-composition>
         </div>
     </div>
 </template>
@@ -11,11 +11,9 @@
 <!-- <script setup> 장점 : https://mine-it-record.tistory.com/640 -->
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import TestItem from './TestItem.vue';
-import TestIndie from './TestIndie.vue';
-
-// props
-const props1 = 'props text';
+import CompositionBase from './CompositionBase.vue';
+import CompositionCounterVue from './CompositionCounter.vue';
+import NoCompositionVue from './NoComposition.vue';
 
 onMounted(() => {
     console.log('mounted!');
@@ -23,9 +21,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-#children {
-    & > * {
-        margin: 10px 0;
-    }
+section {
+    margin-bottom: 50px;
 }
 </style>
